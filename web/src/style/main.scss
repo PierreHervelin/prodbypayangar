@@ -1,0 +1,46 @@
+// colors
+
+$backgroundColor: #1a1a1a;
+$navColor: #101010;
+$activeColor: #ffcf52;
+$buttonColor: #333333;
+$inactiveButtonColor: #1b1b1b;
+$hoverColor: #212121;
+
+$mainFontColor: white;
+$secondFontColor: #dadada;
+$inactiveFontColor: #949494;
+$informationFontColor: #616161;
+
+body {
+    height: 100vh;
+    background-color: $backgroundColor;
+    overflow: hidden;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border-radius: 5px;
+    background-color: $buttonColor;
+    border: none;
+    outline: none;
+}
+.round-button {
+    border-radius: 50%;
+}
+.no-background-button {
+    background: none;
+}
+
+.select {
+    border-radius: 5px;
+    background-color: $buttonColor;
+    color: $secondFontColor;
+}

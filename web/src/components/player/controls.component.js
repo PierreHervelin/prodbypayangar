@@ -16,7 +16,7 @@ const ControlsComponent = () => {
     }, [audio]);
     return (
         <div className="controls">
-            <button className="no-background-button">
+            <button onClick={() => dispatch({ type: AudioActions.bwdSkip })} className="no-background-button">
                 <FaStepBackward />
             </button>
             <button
@@ -31,7 +31,7 @@ const ControlsComponent = () => {
             >
                 {playButton}
             </button>
-            <button className="no-background-button">
+            <button onClick={() => dispatch({ type: AudioActions.fwdSkip })} className="no-background-button">
                 <FaStepForward />
             </button>
         </div>

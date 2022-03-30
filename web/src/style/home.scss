@@ -1,0 +1,138 @@
+.homepage {
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 25%;
+        height: 100%;
+        background-color: $navColor;
+        padding-inline: 50px;
+        padding-block: 25px;
+
+        h3 {
+            color: $secondFontColor;
+            font-weight: normal;
+            text-align: end;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-family: 'semibold';
+        }
+
+        .filters {
+            hr {
+                width: 100%;
+                height: 1px;
+                border: none;
+                background-color: $timelineColor;
+            }
+            .container {
+                padding-inline: 30px;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+                position: relative;
+                margin-top: 30px;
+
+                & > .select {
+                    width: 70%;
+                    margin-block: 10px;
+                }
+
+                .key-bpm {
+                    width: 100%;
+                    position: relative;
+                    height: 30px;
+                    margin-block: 10px;
+
+                    .select {
+                        position: absolute;
+                        width: 35%;
+                        height: 100%;
+                        top: 0;
+                        left: 0;
+                    }
+
+                    .bpm-input {
+                        position: absolute;
+                        width: 50%;
+                        height: 100%;
+                        top: 0;
+                        right: 0;
+
+                        span {
+                            position: absolute;
+                            bottom: 5px;
+                            right: 0;
+                            font-size: 16px;
+                            color: $informationFontColor;
+                            font-family: 'medium';
+                        }
+
+                        input {
+                            width: 100%;
+                            height: 100%;
+                            font-size: 16px;
+                            color: $secondFontColor;
+                            padding-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .player {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 75%;
+        background-color: $navColor;
+        height: 110px;
+
+        .timeline {
+            position: absolute;
+            top: -3px;
+            left: 0;
+            width: 100%;
+            background-color: $timelineColor;
+            height: 3px;
+
+            .current-time {
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: $activeColor;
+            }
+        }
+
+        .controls {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+
+            .round-button {
+                background-color: $activeColor;
+            }
+
+            .no-background-button {
+                margin-inline: 20px;
+
+                svg {
+                    color: #515151;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

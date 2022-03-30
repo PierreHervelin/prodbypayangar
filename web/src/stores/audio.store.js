@@ -14,11 +14,14 @@ const reducer = (state, action) => {
     let beatId;
     switch (action.type) {
         case AudioActions.play:
-            state.audio.play();
-            return {
-                ...state,
-                played: true,
-            };
+            if (state.playlist.length > 0 && state.beatId) {
+                state.audio.play();
+                return {
+                    ...state,
+                    played: true,
+                };
+            }
+            return state;
         case AudioActions.pause:
             state.audio.pause();
             return {

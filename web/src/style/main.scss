@@ -6,6 +6,7 @@ $activeColor: #ffcf52;
 $buttonColor: #333333;
 $inactiveButtonColor: #1b1b1b;
 $hoverColor: #212121;
+$timelineColor: #424242;
 
 $mainFontColor: white;
 $secondFontColor: #dadada;
@@ -24,6 +25,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'regular';
 }
 
 button {
@@ -31,16 +33,102 @@ button {
     background-color: $buttonColor;
     border: none;
     outline: none;
+    cursor: pointer;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 .round-button {
     border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    svg {
+        font-size: 20px;
+    }
 }
 .no-background-button {
     background: none;
+}
+
+input[type='text'] {
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid $timelineColor;
 }
 
 .select {
     border-radius: 5px;
     background-color: $buttonColor;
     color: $secondFontColor;
+    position: relative;
+    width: 200px;
+    min-height: 25px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    &.active {
+        z-index: 99;
+
+        svg {
+            transform: translate(0, -50%) rotate(180deg);
+        }
+        .content {
+            transform: scaleY(1);
+
+            span {
+                opacity: 1;
+                transition: opacity ease 0.5s 0.3s, background-color ease 0.2s, color ease 0.2s;
+            }
+        }
+    }
+    .selected {
+        margin-left: 5px;
+    }
+
+    .content {
+        transform-origin: top;
+        transform: scaleY(0);
+
+        position: absolute;
+        top: calc(100% - 5px);
+        left: 0;
+
+        display: flex;
+        flex-flow: column nowrap;
+        transition: transform ease 0.5s;
+
+        width: 100%;
+        background-color: $buttonColor;
+        color: $secondFontColor;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 10px;
+
+        span {
+            opacity: 0;
+            background-color: transparent;
+            transition: opacity ease 0.5s, background-color ease 0.2s;
+            cursor: pointer;
+            width: 100%;
+            padding: 5px;
+            border-radius: 5px;
+
+            &:hover {
+                color: $mainFontColor;
+                background-color: $informationFontColor;
+            }
+        }
+    }
+
+    svg {
+        font-size: 10px;
+        transition: transform ease 0.5s;
+        position: absolute;
+        right: 6px;
+        top: 50%;
+        transform: translate(0, -50%) rotate(0);
+    }
 }

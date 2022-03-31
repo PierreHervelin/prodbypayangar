@@ -1,6 +1,6 @@
 // colors
 
-$backgroundColor: #1a1a1a;
+$backgroundColor: #1e1e1e;
 $navColor: #101010;
 $activeColor: #ffcf52;
 $buttonColor: #333333;
@@ -26,6 +26,24 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'regular';
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: $buttonColor;
+}
+::-webkit-scrollbar-thumb {
+    background: $informationFontColor;
+    border-radius: 3px;
+}
+
+@supports (scrollbar-color: #777 blue) {
+    * {
+        scrollbar-color: $informationFontColor $buttonColor;
+        scrollbar-width: auto;
+    }
 }
 
 button {
@@ -86,6 +104,7 @@ input[type='text'] {
     }
     .selected {
         margin-left: 5px;
+        font-size: 13px;
     }
 
     .content {
@@ -99,6 +118,7 @@ input[type='text'] {
         display: flex;
         flex-flow: column nowrap;
         transition: transform ease 0.5s;
+        overflow: hidden;
 
         width: 100%;
         background-color: $buttonColor;
@@ -106,6 +126,11 @@ input[type='text'] {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         padding: 10px;
+
+        &.scroll {
+            height: 250px;
+            overflow-y: scroll;
+        }
 
         span {
             opacity: 0;
@@ -115,6 +140,7 @@ input[type='text'] {
             width: 100%;
             padding: 5px;
             border-radius: 5px;
+            font-size: 12px;
 
             &:hover {
                 color: $mainFontColor;
@@ -124,7 +150,7 @@ input[type='text'] {
     }
 
     svg {
-        font-size: 10px;
+        font-size: 8px;
         transition: transform ease 0.5s;
         position: absolute;
         right: 6px;

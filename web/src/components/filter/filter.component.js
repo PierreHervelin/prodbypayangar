@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Keys, Orders } from '../../common/constant';
 import SelectComponent from '../select.component';
+import GenresComponent from './genres.component';
 
 const FilterComponent = () => {
     const [bpm, setBpm] = useState(undefined);
@@ -9,32 +11,10 @@ const FilterComponent = () => {
             <h3>ADD FILTER</h3>
             <hr></hr>
             <div className="container">
-                <SelectComponent
-                    content={
-                        <div className="content">
-                            <span>Date asc</span>
-                            <span>Date desc</span>
-                            <span>Time asc</span>
-                            <span>Time desc</span>
-                        </div>
-                    }
-                    header="ORDER BY"
-                />
-                <div className="genre"></div>
+                <SelectComponent content={Orders} header="ORDER BY" />
+                <GenresComponent />
                 <div className="key-bpm">
-                    <SelectComponent
-                        content={
-                            <div className="content">
-                                <span>Cmaj</span>
-                                <span>Cmin</span>
-                                <span>C#maj</span>
-                                <span>C#min</span>
-                                <span>Dmaj</span>
-                                <span>D#min</span>
-                            </div>
-                        }
-                        header="KEY"
-                    />
+                    <SelectComponent content={Keys} header="KEY" />
                     <div className="bpm-input">
                         <input type="text" onChange={(e) => setBpm(Number.isInteger(Number(e.target.value)) ? e.target.value : 0)} value={bpm} />
                         <span>BPM</span>

@@ -5,6 +5,7 @@ const initialState = {
     played: false,
     audio: new Audio(),
     playlist: [],
+    allBeats: [],
     beatId: 0,
     muted: false,
     volume: 50,

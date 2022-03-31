@@ -8,8 +8,8 @@ const HomePage = () => {
         <div className="homepage">
             <AudioProvider>
                 <PlayerComponent />
+                <MenuComponent />
             </AudioProvider>
-            <MenuComponent />
         </div>
     );
 };

@@ -7,7 +7,7 @@
         position: fixed;
         top: 0;
         right: 0;
-        width: 25%;
+        width: 30%;
         height: 100%;
         background-color: $navColor;
         padding-inline: 50px;
@@ -18,18 +18,35 @@
             font-weight: normal;
             text-align: end;
             margin-bottom: 20px;
-            font-size: 18px;
+            font-size: 16px;
             font-family: 'semibold';
         }
 
+        h4 {
+            color: $secondFontColor;
+            font-weight: normal;
+            text-align: end;
+            margin-bottom: 20px;
+            font-size: 14px;
+            font-family: 'medium';
+        }
+
+        h6 {
+            color: $informationFontColor;
+            font-weight: normal;
+            font-size: 12px;
+            font-family: 'semibold';
+        }
+
+        hr {
+            width: 100%;
+            height: 1px;
+            border: none;
+            background-color: rgba($timelineColor, 0.5);
+        }
+
         .filters {
-            hr {
-                width: 100%;
-                height: 1px;
-                border: none;
-                background-color: $timelineColor;
-            }
-            .container {
+            & > .container {
                 padding-inline: 30px;
                 display: flex;
                 flex-flow: column nowrap;
@@ -68,7 +85,7 @@
                             position: absolute;
                             bottom: 5px;
                             right: 0;
-                            font-size: 16px;
+                            font-size: 14px;
                             color: $informationFontColor;
                             font-family: 'medium';
                         }
@@ -76,11 +93,38 @@
                         input {
                             width: 100%;
                             height: 100%;
-                            font-size: 16px;
+                            font-size: 13px;
                             color: $secondFontColor;
                             padding-left: 10px;
                         }
                     }
+                }
+            }
+        }
+        .footer {
+            position: absolute;
+            width: calc(100% - 100px);
+            bottom: 50px;
+
+            & > .container {
+                margin-top: 25px;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: flex-start;
+                align-items: flex-start;
+
+                a {
+                    color: $secondFontColor;
+                    text-decoration: none;
+                    font-size: 12px;
+                }
+
+                h6 {
+                    margin-top: 20px;
+                }
+                p {
+                    color: $secondFontColor;
+                    font-size: 12px;
                 }
             }
         }
@@ -90,17 +134,17 @@
         position: fixed;
         bottom: 0;
         left: 0;
-        width: 75%;
+        width: 70%;
         background-color: $navColor;
         height: 110px;
 
         .timeline {
             position: absolute;
-            top: -3px;
+            top: -2px;
             left: 0;
             width: 100%;
             background-color: $timelineColor;
-            height: 3px;
+            height: 2px;
 
             .current-time {
                 height: 100%;
@@ -130,7 +174,7 @@
 
                 svg {
                     color: #515151;
-                    font-size: 20px;
+                    font-size: 18px;
                 }
             }
         }
